@@ -9,7 +9,7 @@
   padding:clamp(8rem, 15vh, 12rem) clamp(2rem, 6vw, 5rem) 0; 
   box-sizing:border-box; 
   overflow:hidden; 
-  background: #000 url('assets/Background_Landing.jpg') center center / cover no-repeat;
+  background: #000 url('assets/Backgroound_Landing.jpg') center center / cover no-repeat;
 }
 /* angled bottom shape */
 .hero::after { 
