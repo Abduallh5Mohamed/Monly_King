@@ -1,0 +1,38 @@
+<section class="trending">
+  <div class="trending-header">
+    <h2><span class="main">{{ title }}</span> <span class="accent">{{ accent }}</span></h2>
+    <a class="view-all" href="#/trending">View All</a>
+  </div>
+  <div class="items" *ngIf="items?.length; else empty">
+    <article class="card" *ngFor="let g of items">
+      <div class="media">
+        <img [src]="g.cover" [alt]="g.title" loading="lazy" />
+        <div class="discount" *ngIf="g.discount">{{ g.discount }}% off</div>
+      </div>
+      <div class="info">
+        <div class="meta" *ngIf="g.genres as gs">
+          {{ gs.join(' • ') }}
+        </div>
+        <h3>{{ g.title }}</h3>
+        <div class="rating" *ngIf="g.rating as r">
+          <span class="stars">
+            <ng-container *ngFor="let s of [1,2,3,4,5]"> <i [class.filled]="r >= s"></i> </ng-container>
+          </span>
+          <span class="rc" *ngIf="g.reviewsCount">({{ g.reviewsCount | number }})</span>
+        </div>
+        <p class="desc" *ngIf="g.description">{{ g.description }}</p>
+        <div class="prices">
+          <span class="price">${{ g.price.toFixed(2) }}</span>
+          <span class="orig" *ngIf="g.originalPrice as op">${{ op.toFixed(2) }}</span>
+        </div>
+        <div class="actions">
+          <button class="btn ghost small">Details</button>
+          <button class="btn solid small">Buy Now</button>
+        </div>
+      </div>
+    </article>
+  </div>
+  <ng-template #empty>
+    <div class="empty">No trending items.</div>
+  </ng-template>
+</section>

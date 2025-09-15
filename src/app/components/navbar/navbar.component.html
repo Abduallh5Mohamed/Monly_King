@@ -1,0 +1,26 @@
+<nav class="navbar" [class.transparent]="!scrolled()" [class.scrolled-solid]="scrolled()">
+  <div class="nav-glow-layer"></div>
+  <div class="nav-progress" [style.--p]="(scrollProgress()*100) + '%'">
+    <span class="bar"></span>
+  </div>
+  <div class="nav-inner">
+    <div class="brand" [routerLink]="['/']">
+      <span class="brand-main">GAME</span><span class="brand-accent">Z</span>
+    </div>
+    <button class="burger" (click)="toggle()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="links center" [class.open]="menuOpen()">
+      <li *ngFor="let l of links">
+        <a *ngIf="l.external; else internal" [href]="l.external" target="_blank" rel="noopener" routerLinkActive="active">{{ l.label }}</a>
+        <ng-template #internal>
+          <a [routerLink]="l.path || '/'" routerLinkActive="active" (click)="menuOpen.set(false)">{{ l.label }}</a>
+        </ng-template>
+      </li>
+    </ul>
+    <div class="actions">
+      <a class="btn ghost" href="#signup">Sign Up</a>
+      <a class="btn solid" href="#login">Log In</a>
+    </div>
+  </div>
+</nav>

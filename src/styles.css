@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global resets */
+* { box-sizing: border-box; }
+html, body { height:100%; }
+/* Fonts loaded via index.html <link> tags (Merienda). */
+body { margin:0; font-family: 'Outfit','Segoe UI', system-ui, sans-serif; background:linear-gradient(135deg,#060619,#050516); color:#fff; -webkit-font-smoothing:antialiased; min-height:100dvh; }
+
+/* Utility full-bleed hero variant if needed later */
+.full-bleed { padding:0 !important; }

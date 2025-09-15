@@ -1,0 +1,11 @@
+<section class="hero">
+  <div class="content">
+    <h1 class="hero-title">THE ULTIMATE<br>GAMING ACCOUNTS<br>MARKETPLACE</h1>
+    <p class="hero-subtitle">Buy & Sell Premium Gaming Accounts<br>Safely and Instantly.</p>
+    @if (ctaLink) {
+      <a class="hero-btn" [href]="ctaLink">{{ ctaLabel }}</a>
+    } @else {
+      <button class="hero-btn" type="button">{{ ctaLabel }}</button>
+    }
+  </div>
+</section>

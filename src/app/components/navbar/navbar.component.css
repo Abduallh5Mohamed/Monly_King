@@ -1,0 +1,233 @@
+/* Navbar exactly matching the cyberpunk image */
+.navbar { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  height: 80px; 
+  display: flex; 
+  align-items: center; 
+  z-index: 120; 
+  padding: 0 clamp(2rem, 6vw, 5rem); 
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.navbar.transparent { 
+  background: transparent;
+}
+
+.navbar.scrolled-solid { 
+  background: rgba(5, 0, 15, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-glow-layer,
+.nav-progress,
+.navbar::before {
+  display: none;
+}
+
+.nav-inner { 
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+/* Brand - Exact match to image */
+.brand { 
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.brand:hover .brand-main {
+  text-shadow: 0 0 30px rgba(255, 20, 147, 1);
+}
+
+.brand:hover .brand-accent {
+  text-shadow: 0 0 30px rgba(0, 255, 255, 1);
+}
+
+.brand-main {
+  color: #ff1493;
+  text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+}
+
+.brand-accent {
+  color: #00ffff;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Hide navigation links to match image */
+.links { 
+  display: none;
+}
+
+/* Action buttons - exact styling from image */
+.actions { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+
+.btn { 
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  letter-spacing: 0.1em; 
+  text-decoration: none; 
+  padding: 0.75rem 2rem; 
+  border-radius: 50px; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  min-width: 120px; 
+  text-transform: uppercase;
+  border: 2px solid #8a2be2;
+  background: transparent;
+  color: #8a2be2;
+}
+
+.btn.ghost { 
+  background: transparent; 
+  color: #8a2be2; 
+  border: 2px solid #8a2be2;
+}
+
+.btn.solid { 
+  background: #ff1493;
+  color: white; 
+  border: 2px solid #ff1493;
+}
+
+.btn:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+}
+
+.btn.ghost:hover { 
+  background: rgba(138, 43, 226, 0.1);
+  color: #8a2be2;
+}
+
+.btn.solid:hover { 
+  background: #ff69b4;
+  border-color: #ff69b4;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 0.5rem;
+  }
+  
+  .brand {
+    font-size: 1.2rem;
+    flex-shrink: 2;
+  }
+  
+  .btn {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
+    min-width: 42px;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  
+  .actions {
+    gap: 0.2rem;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 0.4rem;
+    height: 55px;
+  }
+  
+  .brand {
+    font-size: 1rem;
+    flex-shrink: 3;
+  }
+  
+  .btn {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.4rem;
+    min-width: 38px;
+    letter-spacing: 0.01em;
+  }
+  
+  .actions {
+    gap: 0.15rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    padding: 0 0.3rem;
+    height: 50px;
+  }
+  
+  .brand {
+    font-size: 0.9rem;
+    flex-shrink: 4;
+  }
+  
+  .btn {
+    font-size: 0.5rem;
+    padding: 0.2rem 0.35rem;
+    min-width: 35px;
+    letter-spacing: 0;
+    border-width: 1px;
+  }
+  
+  .actions {
+    gap: 0.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .navbar {
+    padding: 0 0.25rem;
+  }
+  
+  .brand {
+    font-size: 0.8rem;
+    flex-shrink: 5;
+  }
+  
+  .btn {
+    font-size: 0.45rem;
+    padding: 0.18rem 0.3rem;
+    min-width: 32px;
+  }
+  
+  .actions {
+    gap: 0.08rem;
+  }
+}
+
+/* Burger menu - hidden as not shown in image */
+.burger {
+  display: none;
+}
